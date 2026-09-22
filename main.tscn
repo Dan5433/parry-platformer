@@ -44,15 +44,24 @@ scale = Vector2(5, 5)
 tile_map_data = PackedByteArray("AAD8/wYAAAAAAAAAAAD9/wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_3tyr6")
 
-[node name="ParryAble" type="Area2D" parent="." unique_id=412544537]
+[node name="ParryOrbs" type="Area2D" parent="." unique_id=412544537]
 position = Vector2(338, 0)
 input_pickable = false
 script = ExtResource("4_1bvp3")
 
-[node name="Orb" type="CollisionShape2D" parent="ParryAble" unique_id=1489097850]
-position = Vector2(420, 383)
+[node name="Orb" type="CollisionShape2D" parent="ParryOrbs" unique_id=1489097850]
+position = Vector2(101, 442.00003)
 scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_7mycd")
 
-[node name="Sprite2D" type="Sprite2D" parent="ParryAble/Orb" unique_id=1761872371]
+[node name="Sprite2D" type="Sprite2D" parent="ParryOrbs/Orb" unique_id=1761872371]
+position = Vector2(0, -1.5258789e-05)
 texture = ExtResource("5_lquwl")
+offset = Vector2(0, 1.5258789e-05)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=966470163]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1530873148]
+offset_right = 41.0
+offset_bottom = 23.0
+text = "etete"
