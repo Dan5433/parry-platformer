@@ -19,6 +19,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_h2yge")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
+radius = 8.5
 
 [node name="Node" type="Node" unique_id=904461740]
 
@@ -39,18 +40,30 @@ position_smoothing_speed = 10.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
+[node name="Label" type="Label" parent="Player" unique_id=1896506661]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -59.0
+offset_right = 20.0
+offset_bottom = -35.0
+grow_horizontal = 2
+pivot_offset = Vector2(20, 12)
+text = "100"
+horizontal_alignment = 1
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1758170430]
 scale = Vector2(5, 5)
-tile_map_data = PackedByteArray("AAD8/wYAAAAAAAAAAAD9/wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD8/wYAAAAAAAAAAAD9/wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_3tyr6")
 
 [node name="ParryOrbs" type="Area2D" parent="." unique_id=412544537]
-position = Vector2(338, 0)
 input_pickable = false
 script = ExtResource("4_1bvp3")
 
 [node name="Orb" type="CollisionShape2D" parent="ParryOrbs" unique_id=1489097850]
-position = Vector2(101, 442.00003)
+position = Vector2(628, 303.00003)
 scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_7mycd")
 
@@ -58,10 +71,48 @@ shape = SubResource("CircleShape2D_7mycd")
 position = Vector2(0, -1.5258789e-05)
 texture = ExtResource("5_lquwl")
 offset = Vector2(0, 1.5258789e-05)
+metadata/_edit_lock_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=966470163]
+[node name="Orb2" type="CollisionShape2D" parent="ParryOrbs" unique_id=911743087]
+position = Vector2(452, 412)
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_7mycd")
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1530873148]
-offset_right = 41.0
-offset_bottom = 23.0
-text = "etete"
+[node name="Sprite2D" type="Sprite2D" parent="ParryOrbs/Orb2" unique_id=695292558]
+position = Vector2(0, -1.5258789e-05)
+texture = ExtResource("5_lquwl")
+offset = Vector2(0, 1.5258789e-05)
+metadata/_edit_lock_ = true
+
+[node name="Orb3" type="CollisionShape2D" parent="ParryOrbs" unique_id=660904498]
+position = Vector2(452, 145)
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_7mycd")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParryOrbs/Orb3" unique_id=1615396251]
+position = Vector2(0, -1.5258789e-05)
+texture = ExtResource("5_lquwl")
+offset = Vector2(0, 1.5258789e-05)
+metadata/_edit_lock_ = true
+
+[node name="Orb4" type="CollisionShape2D" parent="ParryOrbs" unique_id=112421572]
+position = Vector2(540, 351)
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_7mycd")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParryOrbs/Orb4" unique_id=1521762929]
+position = Vector2(0, -1.5258789e-05)
+texture = ExtResource("5_lquwl")
+offset = Vector2(0, 1.5258789e-05)
+metadata/_edit_lock_ = true
+
+[node name="Orb5" type="CollisionShape2D" parent="ParryOrbs" unique_id=1610931048]
+position = Vector2(540, 204)
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_7mycd")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParryOrbs/Orb5" unique_id=1015953268]
+position = Vector2(0, -1.5258789e-05)
+texture = ExtResource("5_lquwl")
+offset = Vector2(0, 1.5258789e-05)
+metadata/_edit_lock_ = true
