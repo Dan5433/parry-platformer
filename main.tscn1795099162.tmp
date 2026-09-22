@@ -22,11 +22,9 @@ sources/0 = SubResource("TileSetAtlasSource_h2yge")
 script = ExtResource("1_h2yge")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=44348523]
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_ig7tw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1569077236]
-scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_gt8fi")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1758170430]
