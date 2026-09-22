@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	# As good practice, you should replace UI acti1ons with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -23,3 +23,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func _process(delta: float) -> void:
+	#Check for parry
+	if Input.is_action_just_pressed("parry"):
+		print("parry")

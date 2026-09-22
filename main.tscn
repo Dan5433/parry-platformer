@@ -1,8 +1,10 @@
 [gd_scene format=4 uid="uid://j01jqdkf4fk5"]
 
-[ext_resource type="Script" uid="uid://r1hr4gokt14t" path="res://scripts/character_controller.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://r1hr4gokt14t" path="res://scripts/player.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://8148y7xook7u" path="res://icon.svg" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://btb1ketqpci82" path="res://sprites/grass.png" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://be6m854opf6u2" path="res://parry_orbs.gd" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://b3utkx8f5yvdl" path="res://sprites/parry_orb.png" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gt8fi"]
 size = Vector2(128, 126)
@@ -15,6 +17,8 @@ texture = ExtResource("2_0xm2m")
 [sub_resource type="TileSet" id="TileSet_3tyr6"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_h2yge")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
 
 [node name="Node" type="Node" unique_id=904461740]
 
@@ -39,3 +43,16 @@ editor_draw_drag_margin = true
 scale = Vector2(5, 5)
 tile_map_data = PackedByteArray("AAD8/wYAAAAAAAAAAAD9/wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_3tyr6")
+
+[node name="ParryAble" type="Area2D" parent="." unique_id=412544537]
+position = Vector2(338, 0)
+input_pickable = false
+script = ExtResource("4_1bvp3")
+
+[node name="Orb" type="CollisionShape2D" parent="ParryAble" unique_id=1489097850]
+position = Vector2(420, 383)
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_7mycd")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParryAble/Orb" unique_id=1761872371]
+texture = ExtResource("5_lquwl")
