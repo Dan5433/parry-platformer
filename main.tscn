@@ -29,6 +29,12 @@ texture = ExtResource("1_ig7tw")
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_gt8fi")
 
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=50292163]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1758170430]
 scale = Vector2(5, 5)
 tile_map_data = PackedByteArray("AAD8/wYAAAAAAAAAAAD9/wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAA=")
