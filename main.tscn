@@ -1,15 +1,12 @@
 [gd_scene format=4 uid="uid://j01jqdkf4fk5"]
 
-[ext_resource type="Script" uid="uid://r1hr4gokt14t" path="res://scripts/player.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://jlbhg2trfm8h" path="res://player.tscn" id="1_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://btb1ketqpci82" path="res://sprites/grass.png" id="2_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://b0yvlbfj1oic" path="res://sprites/player.png" id="2_272bh"]
 [ext_resource type="Script" uid="uid://be6m854opf6u2" path="res://parry_orbs.gd" id="4_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://cqd67o8drjha2" path="res://sprites/parry_meter.png" id="4_5vw27"]
-[ext_resource type="Script" uid="uid://cvh7k4yd1smx8" path="res://parry_meter.gd" id="4_272bh"]
 [ext_resource type="Texture2D" uid="uid://b3utkx8f5yvdl" path="res://sprites/parry_orb.png" id="5_lquwl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt8fi"]
-size = Vector2(144, 100)
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
+radius = 8.5
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
 texture = ExtResource("2_0xm2m")
@@ -20,62 +17,10 @@ texture = ExtResource("2_0xm2m")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_h2yge")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
-radius = 8.5
-
 [node name="Node" type="Node" unique_id=904461740]
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1561035041]
-script = ExtResource("1_h2yge")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=44348523]
-scale = Vector2(5, 5)
-texture = ExtResource("2_272bh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1569077236]
-position = Vector2(0, 15)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_gt8fi")
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=50292163]
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-editor_draw_limits = true
-editor_draw_drag_margin = true
-
-[node name="ParryMeter" type="TextureProgressBar" parent="Player" unique_id=2087511461]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -77.0
-offset_right = 20.0
-offset_bottom = -37.0
-grow_horizontal = 2
-grow_vertical = 0
-pivot_offset = Vector2(20, 20)
-max_value = 4.0
-step = 0.0
-value = 3.0
-fill_mode = 5
-nine_patch_stretch = true
-texture_under = ExtResource("4_5vw27")
-texture_progress = ExtResource("4_5vw27")
-script = ExtResource("4_272bh")
-parry_frames_color = Color(0.8630764, 0.71714544, 0.15096885, 1)
-parry_cooldown_color = Color(0.62, 0.15128002, 0.1178, 1)
-
-[node name="FreezeFrameTimer" type="Timer" parent="Player/ParryMeter" unique_id=318697271]
-process_mode = 2
-autostart = true
-ignore_time_scale = true
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1758170430]
-scale = Vector2(5, 5)
-tile_map_data = PackedByteArray("AAD8/wYAAAAAAAAAAAD9/wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_3tyr6")
+[node name="Player" parent="." unique_id=2136410673 instance=ExtResource("1_1bvp3")]
+position = Vector2(-139, 440)
 
 [node name="ParryOrbs" type="Area2D" parent="." unique_id=412544537]
 input_pickable = false
@@ -135,3 +80,8 @@ position = Vector2(0, -1.5258789e-05)
 texture = ExtResource("5_lquwl")
 offset = Vector2(0, 1.5258789e-05)
 metadata/_edit_lock_ = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1758170430]
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AAD8/wYAAAAAAAAAAAD9/wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_3tyr6")

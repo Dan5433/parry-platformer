@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://jlbhg2trfm8h"]
+
+[ext_resource type="Script" uid="uid://r1hr4gokt14t" path="res://scripts/player.gd" id="1_hqtel"]
+[ext_resource type="Texture2D" uid="uid://b0yvlbfj1oic" path="res://sprites/player.png" id="2_sweqy"]
+[ext_resource type="Texture2D" uid="uid://cqd67o8drjha2" path="res://sprites/parry_meter.png" id="3_2hs0m"]
+[ext_resource type="Script" uid="uid://cvh7k4yd1smx8" path="res://parry_meter.gd" id="4_1jxqw"]
+[ext_resource type="AudioStream" uid="uid://b8khcdhqkilq0" path="res://audio/parry.wav" id="5_sweqy"]
+[ext_resource type="Script" uid="uid://wnaaqcsk4krn" path="res://audio_stream_player.gd" id="6_2hs0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt8fi"]
+size = Vector2(144, 100)
+
+[node name="Player" type="CharacterBody2D" unique_id=2136410673]
+script = ExtResource("1_hqtel")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1695720067]
+scale = Vector2(5, 5)
+texture = ExtResource("2_sweqy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2030255364]
+position = Vector2(0, 15)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_gt8fi")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1050061069]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="ParryMeter" type="TextureProgressBar" parent="." unique_id=96428878]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -57.0
+offset_right = 10.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(20, 20)
+max_value = 4.0
+step = 0.0
+value = 3.0
+fill_mode = 5
+nine_patch_stretch = true
+texture_under = ExtResource("3_2hs0m")
+texture_progress = ExtResource("3_2hs0m")
+script = ExtResource("4_1jxqw")
+parry_frames_color = Color(0.8630764, 0.71714544, 0.15096885, 1)
+parry_cooldown_color = Color(0.62, 0.15128002, 0.1178, 1)
+
+[node name="FreezeFrameTimer" type="Timer" parent="ParryMeter" unique_id=1141758264]
+process_mode = 2
+autostart = true
+ignore_time_scale = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ParryMeter" unique_id=1381517417]
+stream = ExtResource("5_sweqy")
+script = ExtResource("6_2hs0m")
