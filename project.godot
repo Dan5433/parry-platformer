@@ -21,6 +21,11 @@ window/size/borderless=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/max70/Videos/Game Dev/parry_showcase.avi"
+movie_writer/disable_vsync=true
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
