@@ -1,10 +1,12 @@
 extends TextureProgressBar
 
 
-const PARRY_ACTIVE_FRAMES = 4;
-const PARRY_COOLDOWN_FRAMES = 20;
+const PARRY_FREEZE_TIME = 0.2
+const PARRY_ACTIVE_FRAMES = 60
+const PARRY_COOLDOWN_FRAMES = 20
 
 @onready var player: CharacterBody2D = $".."
+@onready var freeze_frame_timer: Timer = $FreezeFrameTimer
 @export_color_no_alpha var parry_frames_color: Color
 @export_color_no_alpha var parry_cooldown_color: Color
 
@@ -12,7 +14,13 @@ var parry_frames: float = 0
 var parry_cooldown: float = 0
 
 
+func _ready() -> void:
+	freeze_frame_timer.timeout.connect(unfreeze)
+	freeze_frame_timer.start(PARRY_FREEZE_TIME)
+
+
 func _process(delta:float) -> void:
+	print(Engine.get_frames_per_second())
 	if(Input.is_action_just_pressed("parry")):
 		if(parry_frames > 0):
 			parry_frames = 0
@@ -35,10 +43,20 @@ func _process(delta:float) -> void:
 
 
 func parry_orb() -> void:
+	var parry_effect: Callable = player.jump
+	parry(parry_effect)
+
+
+func parry(parry_effect: Callable):
 	if(not parry_frames > 0):
 		return
 	
-	player.jump()
+	parry_effect.call()
 	
 	parry_frames = 0
 	parry_cooldown = PARRY_COOLDOWN_FRAMES
+	
+	get_tree().paused = true
+
+func unfreeze() -> void:
+	get_tree().paused = false

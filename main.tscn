@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b3utkx8f5yvdl" path="res://sprites/parry_orb.png" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gt8fi"]
-size = Vector2(128, 143)
+size = Vector2(144, 100)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
 texture = ExtResource("2_0xm2m")
@@ -33,7 +33,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("2_272bh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1569077236]
-position = Vector2(0, 4.25)
+position = Vector2(0, 15)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_gt8fi")
 
@@ -66,6 +66,11 @@ texture_progress = ExtResource("4_5vw27")
 script = ExtResource("4_272bh")
 parry_frames_color = Color(0.8630764, 0.71714544, 0.15096885, 1)
 parry_cooldown_color = Color(0.62, 0.15128002, 0.1178, 1)
+
+[node name="FreezeFrameTimer" type="Timer" parent="Player/ParryMeter" unique_id=318697271]
+process_mode = 2
+autostart = true
+ignore_time_scale = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1758170430]
 scale = Vector2(5, 5)
