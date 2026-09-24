@@ -1,15 +1,15 @@
 [gd_scene format=4 uid="uid://j01jqdkf4fk5"]
 
 [ext_resource type="Script" uid="uid://r1hr4gokt14t" path="res://scripts/player.gd" id="1_h2yge"]
-[ext_resource type="Texture2D" uid="uid://8148y7xook7u" path="res://icon.svg" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://btb1ketqpci82" path="res://sprites/grass.png" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://b0yvlbfj1oic" path="res://sprites/player.png" id="2_272bh"]
 [ext_resource type="Script" uid="uid://be6m854opf6u2" path="res://parry_orbs.gd" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://cqd67o8drjha2" path="res://sprites/parry_meter.png" id="4_5vw27"]
 [ext_resource type="Script" uid="uid://cvh7k4yd1smx8" path="res://parry_meter.gd" id="4_272bh"]
 [ext_resource type="Texture2D" uid="uid://b3utkx8f5yvdl" path="res://sprites/parry_orb.png" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gt8fi"]
-size = Vector2(128, 126)
+size = Vector2(128, 143)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
 texture = ExtResource("2_0xm2m")
@@ -29,10 +29,11 @@ radius = 8.5
 script = ExtResource("1_h2yge")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=44348523]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_ig7tw")
+scale = Vector2(5, 5)
+texture = ExtResource("2_272bh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1569077236]
+position = Vector2(0, 4.25)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_gt8fi")
 
