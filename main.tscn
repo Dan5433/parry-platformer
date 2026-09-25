@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://j01jqdkf4fk5"]
 
-[ext_resource type="PackedScene" uid="uid://jlbhg2trfm8h" path="res://player.tscn" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://jlbhg2trfm8h" path="res://player/player.tscn" id="1_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://btb1ketqpci82" path="res://sprites/grass.png" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://be6m854opf6u2" path="res://scripts/parry_orbs.gd" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bmgrgqg02aica" path="res://enemy/enemy.tscn" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://b3utkx8f5yvdl" path="res://sprites/parry_orb.png" id="5_lquwl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
@@ -20,7 +21,7 @@ sources/0 = SubResource("TileSetAtlasSource_h2yge")
 [node name="Node" type="Node" unique_id=904461740]
 
 [node name="Player" parent="." unique_id=2136410673 instance=ExtResource("1_1bvp3")]
-position = Vector2(-139, 440)
+position = Vector2(1087, 440)
 
 [node name="ParryOrbs" type="Area2D" parent="." unique_id=412544537]
 input_pickable = false
@@ -83,5 +84,8 @@ metadata/_edit_lock_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1758170430]
 scale = Vector2(5, 5)
-tile_map_data = PackedByteArray("AAD8/wYAAAAAAAAAAAD9/wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD8/wYAAAAAAAAAAAD9/wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAcAAAAAAAAAAAARAAcAAAAAAAAAAAASAAcAAAAAAAAAAAATAAYAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_3tyr6")
+
+[node name="Enemy" parent="." unique_id=801120441 instance=ExtResource("5_7mycd")]
+position = Vector2(1328, 512)

@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if(body != player):
+	if body != player:
 		return
 		
 	parry_meter.parry_orb()

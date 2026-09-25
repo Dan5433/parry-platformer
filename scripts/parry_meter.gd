@@ -21,19 +21,19 @@ func _ready() -> void:
 
 
 func _process(delta:float) -> void:
-	if(Input.is_action_just_pressed("parry")):
-		if(parry_frames > 0):
+	if Input.is_action_just_pressed("parry"):
+		if parry_frames > 0:
 			parry_frames = 0
 			parry_cooldown = PARRY_COOLDOWN_FRAMES * 5
-		elif(not parry_cooldown > 0):
+		elif not parry_cooldown > 0:
 			parry_frames = PARRY_ACTIVE_FRAMES
 
-	if(parry_frames > 0):
+	if parry_frames > 0:
 		tint_progress = parry_frames_color
 		value = parry_frames
 		max_value = PARRY_ACTIVE_FRAMES
 		parry_frames -= delta * Engine.physics_ticks_per_second
-	elif(parry_cooldown > 0):
+	elif parry_cooldown > 0:
 		tint_progress = parry_cooldown_color
 		value = parry_cooldown
 		max_value = PARRY_COOLDOWN_FRAMES
@@ -48,7 +48,7 @@ func parry_orb() -> void:
 
 
 func parry(parry_effect: Callable):
-	if(not parry_frames > 0):
+	if not parry_frames > 0:
 		return
 	
 	parry_effect.call()
