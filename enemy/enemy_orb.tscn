@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cdfeye8dg80pa" path="res://enemy/enemy_orb.gd" id="1_dkhr6"]
 [ext_resource type="Texture2D" uid="uid://dfntd4rp13nyq" path="res://sprites/enemy_orb.png" id="1_xcik0"]
 [ext_resource type="Script" uid="uid://d3jdqhf672u1t" path="res://parry_orb/parry_orb_animation.gd" id="2_gm8to"]
+[ext_resource type="Texture2D" uid="uid://b6rwp8kgjnunj" path="res://sprites/parried_enemy_orb.png" id="2_x3fsp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
 radius = 8.5
@@ -14,6 +15,7 @@ collision_mask = 3
 motion_mode = 1
 wall_min_slide_angle = 3.1415927
 script = ExtResource("1_dkhr6")
+parried_texture = ExtResource("2_x3fsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=202688486]
 shape = SubResource("CircleShape2D_7mycd")

@@ -3,9 +3,11 @@ extends CharacterBody2D
 
 signal hit_player(orb: CharacterBody2D)
 
-const SPEED = 400.0
+const SPEED = 500.0
 const DESPAWN_DISTANCE = 5_000.0
 
+@export var parried_texture: Texture2D
+@onready var sprite: Sprite2D = $Sprite2D
 var player: CharacterBody2D
 var parried: bool = false
 
@@ -33,6 +35,7 @@ func _physics_process(delta: float) -> void:
 	if collider == player:
 		hit_player.emit(self)
 		if parried:
+			sprite.texture = parried_texture
 			set_collision_mask_value(3, true)
 			return
 	
