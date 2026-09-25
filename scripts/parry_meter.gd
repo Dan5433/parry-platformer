@@ -1,7 +1,6 @@
 extends TextureProgressBar
 
 
-const PARRY_FREEZE_TIME = 0.2
 const PARRY_ACTIVE_FRAMES = 4
 const PARRY_COOLDOWN_FRAMES = 20
 
@@ -17,7 +16,6 @@ var parry_cooldown: float = 0
 
 func _ready() -> void:
 	freeze_frame_timer.timeout.connect(unfreeze)
-	freeze_frame_timer.start(PARRY_FREEZE_TIME)
 
 
 func _process(delta:float) -> void:
