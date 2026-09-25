@@ -4,6 +4,8 @@ extends CharacterBody2D
 signal hit_player(orb: CharacterBody2D)
 
 const SPEED = 400.0
+const DESPAWN_DISTANCE = 5_000.0
+
 var player: CharacterBody2D
 var parried: bool = false
 
@@ -16,6 +18,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()
+	
+	if(global_position.distance_squared_to(player.global_position) > DESPAWN_DISTANCE ** 2):
+		queue_free()
 	
 	var collision = get_last_slide_collision()
 	if not collision:
@@ -32,7 +37,6 @@ func _physics_process(delta: float) -> void:
 			return
 	
 	queue_free()
-
 
 
 func invert_velocity() -> void:

@@ -1,7 +1,7 @@
 extends Label
 
 
-const REVEAL_SPEED = 0.5
+const REVEAL_SPEED = 0.4
 
 @onready var player: CharacterBody2D = $"../../Player"
 
