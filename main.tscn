@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://jlbhg2trfm8h" path="res://player/player.tscn" id="1_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://btb1ketqpci82" path="res://sprites/grass.png" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://dxh3ptkfgkbtk" path="res://scripts/death_label.gd" id="2_7mycd"]
 [ext_resource type="PackedScene" uid="uid://b2wq7hsvreq0n" path="res://parry_orb/parry_orb.tscn" id="3_lquwl"]
 [ext_resource type="Script" uid="uid://be6m854opf6u2" path="res://parry_orb/parry_orb.gd" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bmgrgqg02aica" path="res://enemy/enemy.tscn" id="5_7mycd"]
@@ -19,6 +20,24 @@ sources/0 = SubResource("TileSetAtlasSource_h2yge")
 
 [node name="Player" parent="." unique_id=2136410673 instance=ExtResource("1_1bvp3")]
 position = Vector2(1087, 440)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1279120093]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=343019191]
+process_mode = 4
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.12808642
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.83, 0.08300002, 0.08300002, 1)
+theme_override_font_sizes/font_size = 60
+text = "You Died :("
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("2_7mycd")
+metadata/_edit_use_anchors_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1758170430]
 scale = Vector2(5, 5)
@@ -45,4 +64,5 @@ position = Vector2(446, 209)
 [node name="Enemy" parent="." unique_id=801120441 instance=ExtResource("5_7mycd")]
 position = Vector2(1328, 512)
 
+[editable path="Player"]
 [editable path="Enemy"]

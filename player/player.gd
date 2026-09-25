@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 
+signal death
+
 const SPEED = 400.0
 const JUMP_VELOCITY = -750.0
 
@@ -33,3 +35,9 @@ func _physics_process(delta: float) -> void:
 	
 func jump() -> void:
 	velocity.y = JUMP_VELOCITY
+
+
+func die() -> void:
+	get_tree().paused = true
+	parry_meter.freeze_frame_timer.queue_free()
+	death.emit()
