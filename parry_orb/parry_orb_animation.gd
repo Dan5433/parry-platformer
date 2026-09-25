@@ -9,7 +9,7 @@ var anim_timer = 0
 func _process(delta: float) -> void:
 	anim_timer -= delta
 	
-	if(anim_timer > 0):
+	if anim_timer > 0:
 		return
 	
 	anim_timer = animation_speed

@@ -30,6 +30,10 @@ movie_writer/disable_vsync=true
 
 enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
 
+[global_group]
+
+player=""
+
 [input]
 
 jump={

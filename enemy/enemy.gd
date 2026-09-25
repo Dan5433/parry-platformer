@@ -2,14 +2,15 @@ extends CharacterBody2D
 
 
 const SPEED = 150.0
-const RAYCAST_LENGTH = 75.0
 
-@onready var raycast: RayCast2D = $RayCast2D
+@onready var player_raycast: RayCast2D = $PlayerRayCast
+@onready var wall_raycast: RayCast2D = $WallRayCast
 var direction: int = -1
 
 
 func _ready() -> void:
-	update_raycast_direction()
+	player_raycast.sees_player.connect(launch_orb)
+	wall_raycast.hit.connect(change_direction)
 
 
 func _physics_process(delta: float) -> void:
@@ -19,13 +20,11 @@ func _physics_process(delta: float) -> void:
 	velocity.x = direction * SPEED
 	
 	move_and_slide()
-	
-	if not raycast.is_colliding():
-		return
-	
+
+
+func change_direction() -> void:
 	direction *= -1
-	update_raycast_direction()
 
 
-func update_raycast_direction() -> void:
-	raycast.target_position = Vector2(RAYCAST_LENGTH * direction, 0)
+func launch_orb() -> void:
+	print("launch orb")

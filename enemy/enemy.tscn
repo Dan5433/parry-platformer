@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ciyo5umvtsex6" path="res://enemy/enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://8148y7xook7u" path="res://icon.svg" id="1_7k104"]
+[ext_resource type="Script" uid="uid://bsdwex63kx0g5" path="res://enemy/wall_ray_cast.gd" id="3_p200p"]
 [ext_resource type="Script" uid="uid://boq40ni8m63ie" path="res://enemy/player_ray_cast.gd" id="3_ppra6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3tyr6"]
@@ -19,6 +20,7 @@ shape = SubResource("RectangleShape2D_3tyr6")
 
 [node name="WallRayCast" type="RayCast2D" parent="." unique_id=286107555]
 target_position = Vector2(175, 0)
+script = ExtResource("3_p200p")
 
 [node name="PlayerRayCast" type="RayCast2D" parent="." unique_id=593256763]
 script = ExtResource("3_ppra6")

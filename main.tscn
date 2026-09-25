@@ -43,3 +43,8 @@ tile_set = SubResource("TileSet_3tyr6")
 
 [node name="Enemy" parent="." unique_id=801120441 instance=ExtResource("5_7mycd")]
 position = Vector2(1328, 512)
+
+[node name="PlayerRayCast" parent="Enemy" index="3" unique_id=593256763]
+visibility_range = 10000.0
+
+[editable path="Enemy"]
