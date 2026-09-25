@@ -3,7 +3,7 @@ extends Sprite2D
 
 @export var animation_speed: float = 1
 var anim_direction = 1
-var anim_timer = animation_speed;
+var anim_timer = 0
 
 
 func _process(delta: float) -> void:

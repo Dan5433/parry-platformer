@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b2wq7hsvreq0n"]
 
 [ext_resource type="Texture2D" uid="uid://b3utkx8f5yvdl" path="res://sprites/parry_orb.png" id="1_w88w3"]
-[ext_resource type="Script" uid="uid://d3jdqhf672u1t" path="res://scripts/parry_orb_animation.gd" id="2_aofdc"]
+[ext_resource type="Script" uid="uid://d3jdqhf672u1t" path="res://parry_orb/parry_orb_animation.gd" id="2_aofdc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
 radius = 8.5

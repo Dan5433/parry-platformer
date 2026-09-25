@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cd81fuagjltfb"]
+
+[ext_resource type="Script" uid="uid://cdfeye8dg80pa" path="res://enemy/enemy_orb.gd" id="1_dkhr6"]
+[ext_resource type="Texture2D" uid="uid://dfntd4rp13nyq" path="res://sprites/enemy_orb.png" id="1_xcik0"]
+[ext_resource type="Script" uid="uid://d3jdqhf672u1t" path="res://parry_orb/parry_orb_animation.gd" id="2_gm8to"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
+radius = 8.5
+
+[node name="Orb" type="CharacterBody2D" unique_id=1145664916]
+scale = Vector2(1.5, 1.5)
+motion_mode = 1
+script = ExtResource("1_dkhr6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=202688486]
+shape = SubResource("CircleShape2D_7mycd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1337596701]
+texture = ExtResource("1_xcik0")
+offset = Vector2(0, 1.5258789e-05)
+hframes = 7
+script = ExtResource("2_gm8to")
+animation_speed = 0.1
