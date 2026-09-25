@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ciyo5umvtsex6" path="res://enemy/enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://8148y7xook7u" path="res://icon.svg" id="1_7k104"]
+[ext_resource type="PackedScene" uid="uid://cd81fuagjltfb" path="res://enemy/enemy_orb.tscn" id="2_pmsee"]
 [ext_resource type="Script" uid="uid://bsdwex63kx0g5" path="res://enemy/wall_ray_cast.gd" id="3_p200p"]
 [ext_resource type="Script" uid="uid://boq40ni8m63ie" path="res://enemy/player_ray_cast.gd" id="3_ppra6"]
 
@@ -10,7 +11,9 @@ size = Vector2(125, 125)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=801120441]
 scale = Vector2(0.5, 0.5)
+collision_layer = 2
 script = ExtResource("1_4gyqm")
+orb = ExtResource("2_pmsee")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=964504735]
 texture = ExtResource("1_7k104")

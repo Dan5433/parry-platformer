@@ -2,10 +2,13 @@ extends CharacterBody2D
 
 
 const SPEED = 150.0
+const ORB_COOLDOWN = 3.0
 
+@export var orb: PackedScene
 @onready var player_raycast: RayCast2D = $PlayerRayCast
 @onready var wall_raycast: RayCast2D = $WallRayCast
 var direction: int = -1
+var orb_cooldown: float
 
 
 func _ready() -> void:
@@ -14,6 +17,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	orb_cooldown -= delta
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
@@ -27,4 +32,11 @@ func change_direction() -> void:
 
 
 func launch_orb() -> void:
-	print("launch orb")
+	if(orb_cooldown > 0):
+		return
+	
+	var orb_copy: CharacterBody2D = orb.instantiate()
+	orb_copy.global_position = global_position
+	add_sibling(orb_copy)
+		
+	orb_cooldown = ORB_COOLDOWN

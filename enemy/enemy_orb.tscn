@@ -9,7 +9,9 @@ radius = 8.5
 
 [node name="Orb" type="CharacterBody2D" unique_id=1145664916]
 scale = Vector2(1.5, 1.5)
+collision_layer = 2
 motion_mode = 1
+wall_min_slide_angle = 3.1415927
 script = ExtResource("1_dkhr6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=202688486]
