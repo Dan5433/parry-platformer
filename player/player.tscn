@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://b8khcdhqkilq0" path="res://audio/parry.wav" id="5_sweqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gt8fi"]
-size = Vector2(80, 100)
+size = Vector2(40, 50)
 
 [node name="Player" type="CharacterBody2D" unique_id=2136410673 groups=["player"]]
 collision_layer = 2
@@ -19,7 +19,6 @@ texture = ExtResource("2_sweqy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2030255364]
 position = Vector2(0, 15)
-scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_gt8fi")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1050061069]

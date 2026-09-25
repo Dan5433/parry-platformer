@@ -7,7 +7,8 @@ const ORB_COOLDOWN = 1.0
 @export var orb: PackedScene
 @onready var player_raycast: RayCast2D = $PlayerRayCast
 @onready var wall_raycast: RayCast2D = $WallRayCast
-var direction: int = -1
+@onready var sprite: Sprite2D = $Sprite2D
+var direction: int = 1
 var orb_cooldown: float
 
 
@@ -29,6 +30,7 @@ func _physics_process(delta: float) -> void:
 
 func change_direction() -> void:
 	direction *= -1
+	sprite.flip_h = false if direction == 1 else true
 
 
 func launch_orb() -> void:

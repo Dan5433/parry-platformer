@@ -3,7 +3,7 @@ extends RayCast2D
 
 signal hit
 
-const RAYCAST_LENGTH = 75.0
+const RAYCAST_LENGTH = 40.0
 
 @onready var body: CharacterBody2D = $".."
 

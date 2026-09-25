@@ -63,6 +63,7 @@ position = Vector2(446, 209)
 
 [node name="Enemy" parent="." unique_id=801120441 instance=ExtResource("5_7mycd")]
 position = Vector2(1328, 512)
+scale = Vector2(1, 1)
 
 [editable path="Player"]
 [editable path="Enemy"]
