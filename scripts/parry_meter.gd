@@ -47,9 +47,19 @@ func parry_orb() -> void:
 	parry(parry_effect)
 
 
-func parry(parry_effect: Callable):
+func try_parry_enemy_orb(orb: CharacterBody2D) -> void:
+	var parry_effect: Callable = orb.invert_velocity
+	
+	var parried: bool = parry(parry_effect)
+	orb.parried = parried
+	
+	if not parried:
+		get_tree().paused = true
+
+
+func parry(parry_effect: Callable) -> bool:
 	if not parry_frames > 0:
-		return
+		return false
 	
 	parry_effect.call()
 	
@@ -58,6 +68,7 @@ func parry(parry_effect: Callable):
 	
 	parry_audio.play()
 	get_tree().paused = true
+	return true
 
 func unfreeze() -> void:
 	get_tree().paused = false

@@ -20,7 +20,13 @@ sources/0 = SubResource("TileSetAtlasSource_h2yge")
 [node name="Player" parent="." unique_id=2136410673 instance=ExtResource("1_1bvp3")]
 position = Vector2(1087, 440)
 
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1758170430]
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AAD8/wYAAAAAAAAAAAD9/wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAcAAAAAAAAAAAARAAcAAAAAAAAAAAASAAcAAAAAAAAAAAATAAYAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_3tyr6")
+
 [node name="ParryOrbs" type="Area2D" parent="." unique_id=412544537]
+collision_mask = 3
 input_pickable = false
 script = ExtResource("4_1bvp3")
 
@@ -36,15 +42,7 @@ position = Vector2(446, 279)
 [node name="Orb4" parent="ParryOrbs" unique_id=1854068195 instance=ExtResource("3_lquwl")]
 position = Vector2(446, 209)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1758170430]
-scale = Vector2(5, 5)
-tile_map_data = PackedByteArray("AAD8/wYAAAAAAAAAAAD9/wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAcAAAAAAAAAAAARAAcAAAAAAAAAAAASAAcAAAAAAAAAAAATAAYAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_3tyr6")
-
 [node name="Enemy" parent="." unique_id=801120441 instance=ExtResource("5_7mycd")]
 position = Vector2(1328, 512)
-
-[node name="PlayerRayCast" parent="Enemy" index="3" unique_id=593256763]
-visibility_range = 10000.0
 
 [editable path="Enemy"]

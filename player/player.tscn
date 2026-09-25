@@ -10,6 +10,7 @@
 size = Vector2(80, 100)
 
 [node name="Player" type="CharacterBody2D" unique_id=2136410673 groups=["player"]]
+collision_layer = 2
 script = ExtResource("1_hqtel")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1695720067]

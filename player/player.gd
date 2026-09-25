@@ -5,6 +5,7 @@ const SPEED = 400.0
 const JUMP_VELOCITY = -750.0
 
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var parry_meter: TextureProgressBar = $ParryMeter
 
 
 func _physics_process(delta: float) -> void:

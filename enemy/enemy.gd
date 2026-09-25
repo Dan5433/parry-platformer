@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 150.0
-const ORB_COOLDOWN = 3.0
+const ORB_COOLDOWN = 1.0
 
 @export var orb: PackedScene
 @onready var player_raycast: RayCast2D = $PlayerRayCast

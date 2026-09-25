@@ -9,9 +9,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3tyr6"]
 size = Vector2(125, 125)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=801120441]
+[node name="Enemy" type="CharacterBody2D" unique_id=801120441 groups=["enemy"]]
 scale = Vector2(0.5, 0.5)
-collision_layer = 2
+collision_layer = 4
 script = ExtResource("1_4gyqm")
 orb = ExtResource("2_pmsee")
 
@@ -26,4 +26,6 @@ target_position = Vector2(175, 0)
 script = ExtResource("3_p200p")
 
 [node name="PlayerRayCast" type="RayCast2D" parent="." unique_id=593256763]
+collision_mask = 3
 script = ExtResource("3_ppra6")
+visibility_range = 1500.0
