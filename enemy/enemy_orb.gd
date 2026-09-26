@@ -31,12 +31,13 @@ func _physics_process(delta: float) -> void:
 	var collider: Node2D = collision.get_collider()
 	if collider.is_in_group("enemy"):
 		collider.queue_free()
-	
+			
 	if collider == player:
 		hit_player.emit(self)
 		if parried:
 			sprite.texture = parried_texture
 			set_collision_mask_value(3, true)
+			set_collision_mask_value(2, false)
 			return
 	
 	queue_free()

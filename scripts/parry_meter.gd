@@ -51,7 +51,7 @@ func try_parry_enemy_orb(orb: CharacterBody2D) -> void:
 	var parried: bool = parry(parry_effect)
 	orb.parried = parried
 	
-	if parried:
+	if orb.parried:
 		return
 	
 	player.die()
