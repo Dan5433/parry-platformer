@@ -36,6 +36,9 @@ sources/2 = SubResource("TileSetAtlasSource_efxa6")
 [node name="Player" parent="." unique_id=2136410673 instance=ExtResource("1_1bvp3")]
 position = Vector2(398, 440)
 
+[node name="Camera2D" parent="Player" index="2" unique_id=1050061069]
+zoom = Vector2(0.6, 0.6)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1279120093]
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=343019191]
