@@ -20,6 +20,8 @@ OR
 - Parry: Left-click
 ## Parrying
 You have a 0.06 second window to parry something before it enters your collision box
+
+There is a circular bar on top of the player indicating active parry frames (gold) and parry cooldown (red)
 <img width="640" height="360" alt="Screenshot 2026-09-27 115250" src="https://github.com/user-attachments/assets/370102d1-4117-4754-89df-1cda3dcc3bad" />
 
 ### Parry effects
